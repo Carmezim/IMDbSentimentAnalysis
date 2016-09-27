@@ -5,6 +5,9 @@ import sqlite3
 import os
 import numpy as np
 
+# import update function from local dir
+from update import update_model
+
 # import HashingVectorizer from local dir
 from vectorizer import vect
 
@@ -72,3 +75,4 @@ def feedback():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    update_model(filepath=db, model=clf, batch_size=10000)
